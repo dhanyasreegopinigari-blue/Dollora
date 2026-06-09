@@ -1,153 +1,171 @@
-# 🛍️ Dollora - Modern E-Commerce Store
+# 🛍️ Dollora - Modern E-Commerce Platform
 
-Dollora is a full-stack e-commerce web application built with Django and PostgreSQL, designed to provide a modern online shopping experience with category-based browsing, wishlist management, product comparison, and an admin-powered product management system.
+Dollora is a full-stack e-commerce web application built with Django and PostgreSQL, designed to provide a seamless online shopping experience. The platform allows users to browse products, manage wishlists, explore categories, and place orders through an intuitive and responsive interface.
 
 ---
 
-## 🚀 Features
+## 🚀 Live Demo
+
+🌐 Website: https://dollora-1.onrender.com
+
+🛠️ Django Admin: https://dollora-1.onrender.com/admin
+
+---
+
+## 📸 Screenshots
+
+### Homepage
+![Homepage](screenshots/homepage.png)
+
+### Categories
+![Categories](screenshots/categories.png)
+
+### Product Details
+![Product Details](screenshots/product-details.png)
+
+### Wishlist
+![Wishlist](screenshots/wishlist.png)
+
+### Admin Dashboard
+![Admin Dashboard](screenshots/admin-dashboard.png)
+
+---
+
+## ✨ Features
 
 ### Customer Features
-
-* Browse products by category
-* Search products by name
-* Product detail pages
-* Wishlist functionality
-* Shopping cart
-* Product comparison
-* Multi-category product support
-* Responsive Amazon/Flipkart-inspired UI
-* Product discount badges
-* Pagination support
-* User authentication
+- Browse products by category
+- Product detail pages
+- Wishlist functionality
+- Search products
+- Responsive design
+- Product discount badges
+- Product image gallery
+- Pagination support
+- Dynamic category filtering
 
 ### Admin Features
-
-* Django Admin Dashboard
-* Add/Edit/Delete Products
-* Upload Product Images
-* Manage Categories
-* Manage Orders
-* Manage Users
-* Manage Product Discounts
+- Secure Django Admin Panel
+- Add/Edit/Delete Products
+- Manage Categories
+- Upload Product Images
+- Inventory Management
+- Manage Orders
+- Manage Users
+- Product Discount Management
 
 ---
 
 ## 🛠️ Tech Stack
 
 ### Backend
+- Django 6
+- Python 3.13
 
-* Django 6
-* Python 3.13
-* PostgreSQL (Neon)
+### Database
+- PostgreSQL (Neon)
 
 ### Frontend
-
-* HTML5
-* CSS3
-* Bootstrap 5
-* JavaScript
+- HTML5
+- CSS3
+- Bootstrap
+- JavaScript
 
 ### Deployment
+- Render / Railway
+- Gunicorn
+- WhiteNoise
 
-* Render
-* Neon PostgreSQL
-* WhiteNoise
-* Gunicorn
+### Version Control
+- Git
+- GitHub
 
 ---
 
 ## 📂 Project Structure
 
 ```bash
-dollora/
+Dollora/
 │
-├── config/
-│   ├── settings.py
-│   ├── urls.py
-│   └── wsgi.py
-│
+├── accounts/
 ├── store/
-│   ├── models.py
-│   ├── views.py
-│   ├── admin.py
-│   ├── urls.py
-│   └── templates/
-│
+├── templates/
 ├── media/
 ├── static/
-├── requirements.txt
+├── config/
+│
 ├── manage.py
-└── .env
+├── requirements.txt
+├── .env.example
+└── README.md
 ```
 
 ---
 
-## ⚙️ Environment Variables
+## ⚙️ Installation
 
-Create a `.env` file in the project root.
-
-```env
-SECRET_KEY=your_secret_key_here
-
-DATABASE_URL=your_neon_postgresql_url
-
-DEBUG=False
-
-ALLOWED_HOSTS=.onrender.com
-
-CSRF_TRUSTED_ORIGINS=https://your-app.onrender.com
-```
-
----
-
-## 🔧 Local Installation
-
-### Clone Repository
+### 1. Clone Repository
 
 ```bash
-git clone https://github.com/yourusername/dollora.git
-cd dollora
+git clone https://github.com/your-username/Dollora.git
+cd Dollora
 ```
 
-### Create Virtual Environment
+### 2. Create Virtual Environment
 
 ```bash
 python -m venv .venv
 ```
 
-### Activate Virtual Environment
+### Activate Environment
 
-Windows:
+#### Windows
 
 ```bash
 .venv\Scripts\activate
 ```
 
-Linux/Mac:
+#### Linux / Mac
 
 ```bash
 source .venv/bin/activate
 ```
 
-### Install Dependencies
+### 3. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### Run Migrations
+### 4. Create Environment Variables
+
+Create a `.env` file in the project root:
+
+```env
+SECRET_KEY=your-secret-key
+DEBUG=True
+DATABASE_URL=your-neon-postgresql-url
+```
+
+### 5. Apply Migrations
 
 ```bash
 python manage.py migrate
 ```
 
-### Start Development Server
+### 6. Create Superuser
+
+```bash
+python manage.py createsuperuser
+```
+
+### 7. Run Development Server
 
 ```bash
 python manage.py runserver
 ```
 
-Open:
+Visit:
 
 ```text
 http://127.0.0.1:8000/
@@ -155,28 +173,12 @@ http://127.0.0.1:8000/
 
 ---
 
-## 🗄️ Database
-
-This project uses:
-
-* Neon PostgreSQL
-* Django ORM
-* Environment-based database configuration
-
-Connection is handled through:
-
-```env
-DATABASE_URL=
-```
-
----
-
-## 🚂 Render Deployment
+## 🌍 Deployment
 
 ### Build Command
 
 ```bash
-pip install -r requirements.txt && python manage.py collectstatic --noinput
+pip install -r requirements.txt && python manage.py collectstatic --noinput && python manage.py migrate
 ```
 
 ### Start Command
@@ -187,62 +189,72 @@ gunicorn config.wsgi:application
 
 ### Environment Variables
 
-Add in Render:
-
 ```env
-SECRET_KEY=your_secret_key
-
-DATABASE_URL=your_neon_database_url
-
+SECRET_KEY=your-secret-key
+DATABASE_URL=your-neon-postgresql-url
 DEBUG=False
-
-ALLOWED_HOSTS=.onrender.com
-
-CSRF_TRUSTED_ORIGINS=https://your-app.onrender.com
+ALLOWED_HOSTS=your-domain.com
+CSRF_TRUSTED_ORIGINS=https://your-domain.com
 ```
 
 ---
 
-## 📸 Screenshots
+## 🗄️ Database
 
-Add screenshots here after deployment:
+Dollora uses:
 
-### Home Page
-
-![Home](screenshots/home.png)
-
-### Product Page
-
-![Product](screenshots/product.png)
-
-### Admin Dashboard
-
-![Admin](screenshots/admin.png)
+- PostgreSQL (Neon)
+- Django ORM
+- Environment-based database configuration
 
 ---
 
-## 🔮 Future Enhancements
+## 🔐 Security Features
 
-* Payment Gateway Integration
-* Order Tracking
-* Product Reviews & Ratings
-* AI Product Recommendations
-* Email Notifications
-* Coupon System
-* Inventory Management
-* Analytics Dashboard
+- Environment Variables for Secrets
+- CSRF Protection
+- Secure Authentication
+- Protected Admin Panel
+- Production Ready Configuration
 
 ---
 
-## 👩‍💻 Author
+## 📈 Future Enhancements
 
-Dhanyasree Gopinigari
-
-* GitHub: https://github.com/dhanyasreegopinigari-blue
-* LinkedIn: https://linkedin.com/in/dhanyasree-gopinigari-694378409
+- Payment Gateway Integration (Razorpay / Stripe)
+- Order Tracking
+- User Reviews & Ratings
+- Coupon System Enhancements
+- Email Notifications
+- AI Product Recommendations
+- Multi-Vendor Support
 
 ---
 
-## 📜 License
+## 👨‍💻 Author
 
-This project is developed for educational, portfolio, and learning purposes.
+**Dhanyasree Gopinigari**
+
+GitHub:
+[(Github)](https://github.com/dhanyasreegopinigari-blue)
+
+LinkedIn:
+[(Linkedin)](https://www.linkedin.com/in/dhanyasree-gopinigari/)
+
+---
+
+## ⭐ Support
+
+If you found this project useful:
+
+- Star the repository ⭐
+- Fork the project 🍴
+- Share feedback 🚀
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+Copyright © 2026 Dhanyasree Gopinigari
