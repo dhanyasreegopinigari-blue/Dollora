@@ -1,0 +1,1063 @@
+[
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$50cpHE4akFhC4PSVUsc1Ta$9vKqymehFWjeG1brvxB2oCm0uzjvgVd6wygJvHOpGWc=",
+      "last_login": "2026-06-07 17:03:17.295602",
+      "is_superuser": 1,
+      "username": "admin",
+      "last_name": "",
+      "email": "cloudyapples001@gmail.com",
+      "is_staff": 1,
+      "is_active": 1,
+      "date_joined": "2026-06-02 12:35:59",
+      "first_name": ""
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$4ObSLAppCvXxhZJbJCuVKa$gfC1y5T0xNa5spVgBKPoGe1djm0vGOLWwqG8KGqa5UY=",
+      "last_login": "2026-06-07 17:02:50.546436",
+      "is_superuser": 1,
+      "username": "dhanyaadmin",
+      "last_name": "",
+      "email": "dhanyasreegopinigari@gmail.com",
+      "is_staff": 1,
+      "is_active": 1,
+      "date_joined": "2026-06-02 12:45:03",
+      "first_name": ""
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$C8heJc0ipCBdJ7svwj4eKP$X1/xa9e+GAJLKagn/IWRIQpc4kLL0NZdyPNnvTS5GH0=",
+      "last_login": "2026-06-07 18:54:56.462340",
+      "is_superuser": 1,
+      "username": "Dolly",
+      "last_name": "",
+      "email": "dhanasana789@gmail.com",
+      "is_staff": 1,
+      "is_active": 1,
+      "date_joined": "2026-06-02 14:30:04",
+      "first_name": ""
+    }
+  },
+  {
+    "model": "store.category",
+    "pk": 1,
+    "fields": {
+      "name": "Electronics"
+    }
+  },
+  {
+    "model": "store.category",
+    "pk": 2,
+    "fields": {
+      "name": "Fashion"
+    }
+  },
+  {
+    "model": "store.category",
+    "pk": 3,
+    "fields": {
+      "name": "Books"
+    }
+  },
+  {
+    "model": "store.category",
+    "pk": 4,
+    "fields": {
+      "name": "Home & Kitchen"
+    }
+  },
+  {
+    "model": "store.category",
+    "pk": 5,
+    "fields": {
+      "name": "Sports"
+    }
+  },
+  {
+    "model": "store.category",
+    "pk": 6,
+    "fields": {
+      "name": "Beauty"
+    }
+  },
+  {
+    "model": "store.category",
+    "pk": 7,
+    "fields": {
+      "name": "Men Wear"
+    }
+  },
+  {
+    "model": "store.category",
+    "pk": 8,
+    "fields": {
+      "name": "Women Wear"
+    }
+  },
+  {
+    "model": "store.category",
+    "pk": 9,
+    "fields": {
+      "name": "Kids and toys"
+    }
+  },
+  {
+    "model": "store.category",
+    "pk": 10,
+    "fields": {
+      "name": "Women Wear"
+    }
+  },
+  {
+    "model": "store.category",
+    "pk": 11,
+    "fields": {
+      "name": "Women Wear"
+    }
+  },
+  {
+    "model": "store.category",
+    "pk": 12,
+    "fields": {
+      "name": "Women Wear"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 1,
+    "fields": {
+      "category": 1,
+      "name": "Laptop HP",
+      "description": "HP 15 Smartchoice, AMD Ryzen 7 7735HS (16GB DDR5,512GB SSD) FHD, Anti-Glare, Micro-Edge, 15.6''/39.6cm, Win11, M365 Basic(1yr)* Office24, Silver, 1.59kg, fc1038AU, FHD Camera w/Shutter, Backlit Laptop",
+      "price": "66900.00",
+      "stock": 8,
+      "image": "products/71O1pUfzoYL._SY450_.jpg",
+      "created_at": "2026-06-02T13:09:37.324Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 2,
+    "fields": {
+      "category": 1,
+      "name": "One Plus Mobile",
+      "description": "OnePlus 15R | 12GB+256GB | Mint Breeze | World's First Snapdragon┬« 8 Gen 5 | 7400mAh Battery | Personalised AI | Game-Changing 165Hz Display | IP66 IP68 IP69 & IP69K | 4K 120fps Video",
+      "price": "54999.00",
+      "stock": 10,
+      "image": "products/61h53LtSVVL._SX425_.jpg",
+      "created_at": "2026-06-04T09:50:57.232Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 3,
+    "fields": {
+      "category": 1,
+      "name": "Apple iPhone 17e",
+      "description": "Apple iPhone 17e 256 GB: 15.40 cm (6.1ΓÇ│) Super Retina XDR Display, A19 Chip, All-Day Battery Life, 48MP Fusion Camera, 256GB Starting Storage; Soft Pink",
+      "price": "64900.00",
+      "stock": 9,
+      "image": "products/312bR652nRL._SY300_SX300_QL70_FMwebp_.webp",
+      "created_at": "2026-06-04T10:29:10.947Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 4,
+    "fields": {
+      "category": 1,
+      "name": "Samsung Galaxy S26",
+      "description": "Samsung Galaxy S26 5G (Black, 12GB RAM, 256GB Storage), AI Phone, Photo Assist, Creative Studio, 50MP Camera with ProVisual Engine, Powerful Customized Processor and 4300mAh Battery",
+      "price": "79999.00",
+      "stock": 10,
+      "image": "products/71ju4kS-W8L._SX425_.jpg",
+      "created_at": "2026-06-04T10:33:49.098Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 5,
+    "fields": {
+      "category": 1,
+      "name": "Samsung Galaxy F06 5G (Lit Violet, 128 GB) (4 GB RAM)",
+      "description": "4 GB RAM | 128 GB ROM | Expandable Upto 1500 GB\r\n17.02 cm (6.7 inch) HD+ Display\r\n50MP + 2MP | 8MP Front Camera\r\n5000 mAh Battery\r\nDimensity 6300 Processor",
+      "price": "12990.00",
+      "stock": 10,
+      "image": "products/51Pff18nc0L._SX425_.jpg",
+      "created_at": "2026-06-04T10:36:00.180Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 6,
+    "fields": {
+      "category": 1,
+      "name": "Dell Inspiron 15",
+      "description": "Dell 15 (Previously Inspiron) Laptop, 14th Gen Intel Core i3/Core 3 100U Processor, 8GB DDR4, 512 SSD, 15.6\" FHD 120Hz IPS AG 250 nit Display, Win 11 + Office H&S 2024, Carbon Black, 1.63Kg",
+      "price": "48990.00",
+      "stock": 10,
+      "image": "products/717WZ7WriwL._SY450_.jpg",
+      "created_at": "2026-06-04T10:37:54.917Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 7,
+    "fields": {
+      "category": 1,
+      "name": "HP Pavilion",
+      "description": "HP 15 Smartchoice, Intel Core Ultra 5 125H, 12 Tops (16GB DDR5, 512GB SSD) FHD, IPS, 15.6''/39.6cm, Win11, M365(1yr)* Office24, Silver, 1.65kg, fd1254TU, FHD Camera w/Shutter, AI Powered Laptop",
+      "price": "75490.00",
+      "stock": 10,
+      "image": "products/71fYb4qQiML._SY355_.jpg",
+      "created_at": "2026-06-04T10:39:23.362Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 8,
+    "fields": {
+      "category": 1,
+      "name": "Sony WH-1000XM5",
+      "description": "Sony WH-1000XM5 Best Active Noise Cancelling Wireless Bluetooth Over Ear Headphones with Mic for Clear Calling, Battery Life 30 Hours -Black",
+      "price": "29790.00",
+      "stock": 15,
+      "image": "products/61O3iMlnJIL._SX355_.jpg",
+      "created_at": "2026-06-04T10:41:13.139Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 9,
+    "fields": {
+      "category": 1,
+      "name": "Noise Master Buds Max",
+      "description": "Noise Master Buds Max, Sound by Bose Wireless Over-Ear Headphones, Adaptive ANC, LHDC 5.0, Immersive Spatial Audio, Upto 60H Playtime, Fast Pairing, Wear Detection(Onyx)",
+      "price": "9999.00",
+      "stock": 18,
+      "image": "products/61eSXFi9nQL._SY355_.jpg",
+      "created_at": "2026-06-04T10:42:53.645Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 10,
+    "fields": {
+      "category": 1,
+      "name": "Apple AirPods Pro",
+      "description": "Active noise cancellation for immersive sound, Quick access to Siri by saying ΓÇ£Hey SiriΓÇ¥. The wireless charging case delivers more than 24 hours of battery life.",
+      "price": "22400.00",
+      "stock": 25,
+      "image": "products/71zny7BTRlL._SX466_.jpg",
+      "created_at": "2026-06-04T10:45:09.613Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 11,
+    "fields": {
+      "category": 1,
+      "name": "JBL Ear Buds",
+      "description": "JBL Wave Beam 2 Ear Buds Wireless BluetoothV5.3, Active Noise Cancellation Earbuds, Multi Connect, App for Customized Extra Bass Eq, Relax Mode ,Speed Charge, 40H Playback, Fast Pair,4 Mics,IP54(Black)",
+      "price": "2999.00",
+      "stock": 19,
+      "image": "products/61DFgTmj9xL._SY355_.jpg",
+      "created_at": "2026-06-04T10:47:30.360Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 12,
+    "fields": {
+      "category": 1,
+      "name": "Noise Buds N1",
+      "description": "Noise Buds N1 Truly Wireless Earbuds with Chrome Finish, 40H of Playtime, Quad Mic with ENC, Ultra Low Latency Gaming (Up to 40 Ms), Instacharge(10 Min=120 Min), Bluetooth V5.3(Calm Beige)",
+      "price": "999.00",
+      "stock": 27,
+      "image": "products/51dU2c57mL._SY355_.jpg",
+      "created_at": "2026-06-04T10:48:36.961Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 13,
+    "fields": {
+      "category": 1,
+      "name": "M19 TWS Earbuds",
+      "description": "M19 TWS Earbuds with LED Battery Display & Built-in Torch | 30H Playtime, Fast Charging, Bluetooth 5.1, ENC, Deep Bass, IPX7 Waterproof",
+      "price": "349.00",
+      "stock": 27,
+      "image": "products/51HB-pSIx9L._SY550_.jpg",
+      "created_at": "2026-06-04T10:49:53.602Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 14,
+    "fields": {
+      "category": 2,
+      "name": "Summer Travel Co-Ord Set Short Sleeve Shirt & Wide-Leg Pant",
+      "description": "Leriya Fashion Co Ord Set for Women Stylish | Summer Travel Co-Ord Set Short Sleeve Shirt & Wide-Leg Pant | Paisley Printed Stylish Casual Outfit for Summer Cord for Women | Dress for Woman",
+      "price": "599.00",
+      "stock": 20,
+      "image": "products/71-7x4ZSzkL._SY550_.jpg",
+      "created_at": "2026-06-04T10:53:28.161Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 15,
+    "fields": {
+      "category": 2,
+      "name": "NAINVISH Women Kurta",
+      "description": "NAINVISH Women Cotton Printed Kurta Pant Co Ord Set Palm Tree Design Soft Fabric Comfortable Daily Outfit",
+      "price": "660.00",
+      "stock": 27,
+      "image": "products/51NYs0EfSaL._SY550_.jpg",
+      "created_at": "2026-06-04T10:54:33.342Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 16,
+    "fields": {
+      "category": 2,
+      "name": "Greciilooks Long MAxi Dress",
+      "description": "GRECIILOOKS Women's Printed Long Maxi Dress | Sleeveless Layered Dress for Summer Styling | Elegant Boho Dress for Women | Casual Beach Vacation Maxi Outfit",
+      "price": "629.00",
+      "stock": 27,
+      "image": "products/61jrNKEb6HL._SY550_.jpg",
+      "created_at": "2026-06-04T11:02:36.088Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 17,
+    "fields": {
+      "category": 2,
+      "name": "Leriya Fashion Women Top",
+      "description": "Leriya Fashion Women Rayon Floral Stripe Printed Summer Shirt | Full Sleeve Collared Button Down Casual & Formal Top for Women | Breathable Lightweight Regular Fit Office Wear Western Shirt for Girls",
+      "price": "449.00",
+      "stock": 19,
+      "image": "products/61A-pdWdsZL._SY550_.jpg",
+      "created_at": "2026-06-04T11:04:06.010Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 18,
+    "fields": {
+      "category": 2,
+      "name": "Shining Diva Fashion Bracelet",
+      "description": "Shining Diva Fashion Latest Stylish Multilayer Gold Plated Bangle Bracelet for Women and Girls (rr14669b) Set of 6",
+      "price": "299.00",
+      "stock": 19,
+      "image": "products/71UCk9VMVrL._SY395_.jpg",
+      "created_at": "2026-06-04T11:05:19.919Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 19,
+    "fields": {
+      "category": 2,
+      "name": "KOTTY Mens Regular Sytlish Jeans",
+      "description": "KOTTY Mens Regular Fit|Classic Design with Stylish Look |Day Comfort|Mide Rise Strachable Jeans",
+      "price": "456.00",
+      "stock": 18,
+      "image": "products/61dFcpPdJkL._SY550_.jpg",
+      "created_at": "2026-06-04T11:07:02.285Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 20,
+    "fields": {
+      "category": 2,
+      "name": "BLACKSTEP Women Oversized Jersey Tshirt",
+      "description": "BLACKSTEP Women Oversized Cotton Jersey Tshirt | Loose Fit Streetwear Casual Top | Drop Shoulder Longline T Shirt for Girls College Wear Travel Gym Daily Outfit",
+      "price": "349.00",
+      "stock": 29,
+      "image": "products/51L4BRS2h1L._SY550_.jpg",
+      "created_at": "2026-06-04T11:08:38.721Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 21,
+    "fields": {
+      "category": 2,
+      "name": "Leriya Fahsion Women Floral Summer SHirt",
+      "description": "Leriya Fashion Women Rayon Floral Stripe Printed Summer Shirt | Full Sleeve Collared Button Down Casual & Formal Top for Women | Breathable Lightweight Regular Fit Office Wear Western Shirt for Girls",
+      "price": "409.00",
+      "stock": 20,
+      "image": "products/61coD2Nuu4L._SY550_.jpg",
+      "created_at": "2026-06-04T11:09:51.363Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 22,
+    "fields": {
+      "category": 1,
+      "name": "Apple MacBook Neo 13",
+      "description": "Apple 2026 MacBook Neo 13ΓÇ│ Laptop with A18 Pro chip: Built for AI and Apple Intelligence, Liquid Retina Display, 8GB Unified Memory, 256GB SSD Storage, 1080p FaceTime HD Camera; Blush",
+      "price": "64990.00",
+      "stock": 31,
+      "image": "products/61dLund7bhL._SY355_.jpg",
+      "created_at": "2026-06-04T12:39:41.361Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 23,
+    "fields": {
+      "category": 1,
+      "name": "Samsung Galaxy Tab S10 Lite",
+      "description": "Samsung Galaxy Tab S10 Lite with AI [Smartchoice], S Pen in-Box, 27.7 cm (10.9 Inch) Display, Object Eraser, 90Hz Refresh Rate, IP42 Rating, 6GB RAM, 128GB Storage, Wi-Fi + 5G Tablet, Silver",
+      "price": "38999.00",
+      "stock": 22,
+      "image": "products/61lUUj0KWwL._SY355_.jpg",
+      "created_at": "2026-06-04T12:41:15.230Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 24,
+    "fields": {
+      "category": 2,
+      "name": "Shashmi Girl's Solid V-Neck A-Line Maxi Dress",
+      "description": "Shasmi Girl's & Women's Solid Color V-Neck A-Line Maxi Dress for Women | New Year Party Outfit | Waist Cinched Puff Sleeve Western | Elegant Casual Wear (Dress 246)",
+      "price": "598.00",
+      "stock": 21,
+      "image": "products/61OzjLUVZZL._SY550_.jpg",
+      "created_at": "2026-06-04T12:42:51.551Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 25,
+    "fields": {
+      "category": 2,
+      "name": "GRECCIILOOKS Men Cotton Shirt",
+      "description": "GRECIILOOKS Men Cotton Shirt | Casual Shirt | Stylish Shirt | Textu Shirt | Regular Fit | Formal Shirt | Solid Slim Fit",
+      "price": "499.00",
+      "stock": 42,
+      "image": "products/61cibx2itL._SY550_.jpg",
+      "created_at": "2026-06-04T12:44:54.552Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 26,
+    "fields": {
+      "category": 2,
+      "name": "ANNI DESIGNER Women's Rayon Viscose A-Line Printed Co-order set with Palazzo",
+      "description": "ANNI DESIGNER Women's Rayon Viscose A-Line Printed Co-Ord Set with Palazzo | Kurta Set for Women | A-Line Kurti Co-Ord Set | Printed Kurti Palazzo | Women Kurta Set",
+      "price": "589.00",
+      "stock": 35,
+      "image": "products/613hWWYasoL._SY550_.jpg",
+      "created_at": "2026-06-04T12:47:43.796Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 27,
+    "fields": {
+      "category": 2,
+      "name": "GRECIILOOKS Women's High Waist White Denim Skit",
+      "description": "GRECIILOOKS Women's High Waist White Denim Skirt with Front Slit ΓÇô Long Maxi Jean Skirt Casual Fashion ΓÇô Stylish Denim Skirts for Women",
+      "price": "749.00",
+      "stock": 29,
+      "image": "products/61PYlPBfFDL._SY550_.jpg",
+      "created_at": "2026-06-04T12:54:45.739Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 28,
+    "fields": {
+      "category": 2,
+      "name": "Suppar Sleave Women Kurti style Top with Pant",
+      "description": "Suppar Sleave Women Solid Rayon Co-Ord Set | Kurti Style Top with Pant | Casual & Office Wear Two Piece Outfit",
+      "price": "540.00",
+      "stock": 28,
+      "image": "products/51jYVNwu5BL._SX522_.jpg",
+      "created_at": "2026-06-04T12:57:54.657Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 29,
+    "fields": {
+      "category": 2,
+      "name": "Fashion Girl's Rayon Floral Printed Dress",
+      "description": "Fashion Dream Girl's Rayon Floral Printed Dress|Girls Dress|Western Dress|Casual Wear",
+      "price": "548.00",
+      "stock": 22,
+      "image": "products/71CNpuH7wyL._SY550_.jpg",
+      "created_at": "2026-06-04T13:00:16.447Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 30,
+    "fields": {
+      "category": 3,
+      "name": "The Psychology of Moneyy",
+      "description": "Timeless lessons on wealth, greed, and happiness doing well with money isn?t necessarily about what you know. It?s about how you behave. And behavior is hard to teach, even to really smart people. How to manage money, invest it, and make business decisions are typically considered to involve a lot of mathematical calculations, where data and formulae tell us exactly what to do. But in the real world, people don?t make financial decisions on a spreadsheet. They make them at the dinner table, or in a meeting room, where personal history, your unique view of the world, ego, pride, marketing, and odd incentives are scrambled together. In the psychology of money, the author shares 19 short stories exploring the strange ways people think about money and teaches you how to make better sense of one of life?s most important matters.",
+      "price": "289.00",
+      "stock": 18,
+      "image": "products/71XEsXS5RlL._SY342_.jpg",
+      "created_at": "2026-06-04T13:02:34.078Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 31,
+    "fields": {
+      "category": 3,
+      "name": "Harry Potter and the Philosopher's Stone",
+      "description": "Turning the envelope over, his hand trembling, Harry saw a purple wax seal bearing a coat of arms; a lion, an eagle, a badger and a snake surrounding a large letter 'H'.\r\n\r\nHarry Potter has never even heard of Hogwarts when the letters start dropping on the doormat at number four, Privet Drive. Addressed in green ink on yellowish parchment with a purple seal, they are swiftly confiscated by his grisly aunt and uncle. Then, on Harry's eleventh birthday, a great beetle-eyed giant of a man called Rubeus Hagrid bursts in with some astonishing news: Harry Potter is a wizard, and he has a place at Hogwarts School of Witchcraft and Wizardry. An incredible adventure is about to begin!",
+      "price": "371.00",
+      "stock": 24,
+      "image": "products/81m9fPLIPL._SY342_.jpg",
+      "created_at": "2026-06-04T13:04:51.423Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 32,
+    "fields": {
+      "category": 3,
+      "name": "The Mountain Is You: Transforming Self-Sabotage Into Self-Mastery",
+      "description": "This is a book about self-sabotage. Why we do it, when we do it, and how to stop doing itΓÇöfor good. Coexisting but conflicting needs create self-sabotaging behaviors. This is why we resist efforts to change, often until they feel completely futile. But by extracting crucial insight from our most damaging habits, building emotional intelligence by better understanding our brains and bodies, releasing past experiences at a cellular level, and learning to act as our highest potential future selves, we can step out of our own way and into our potential. For centuries, the mountain has been used as a metaphor for the big challenges we face, especially ones that seem impossible to overcome. To scale our mountains, we actually have to do the deep internal work of excavating trauma, building resilience, and adjusting how we show up for the climb. In the end, it is not the mountain we master, but ourselves.",
+      "price": "390.00",
+      "stock": 27,
+      "image": "products/71ArH4A-DAL._SY342_.jpg",
+      "created_at": "2026-06-04T13:07:03.940Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 33,
+    "fields": {
+      "category": 3,
+      "name": "Vicious Devil (Kings Of Mafia)",
+      "description": "At the lowest point in my life, I walk into the busiest club, hoping to get a job. Somehow, I end up on stage, being told to strip, and before I can even decide if IΓÇÖm desperate enough, a terrifying man orders me to leave.\r\n\r\nI do my best to ignore my fear as I follow him to his office, not knowing itΓÇÖs about to cost me everything.\r\n\r\nTurns out IΓÇÖm more desperate than I thought, and I swallow my pride and beg.\r\nBut Adriano Rizzo doesnΓÇÖt offer me employment.\r\nNope, he makes me a deal thatΓÇÖs hard to refuse.\r\nI tell myself I can handle whatever he demands of me.\r\nBoy, am I wrong.",
+      "price": "449.00",
+      "stock": 32,
+      "image": "products/81usZ0U-6TL._SY342_.jpg",
+      "created_at": "2026-06-04T13:09:43.632Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 34,
+    "fields": {
+      "category": 3,
+      "name": "Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow",
+      "description": "Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow: Concepts, Tools, and Techniques to Build Intelligent Systems, Third Edition (Full Colour Print)",
+      "price": "3250.00",
+      "stock": 34,
+      "image": "products/71UF9mDAX3L._SY342_.jpg",
+      "created_at": "2026-06-04T13:11:46.845Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 35,
+    "fields": {
+      "category": 3,
+      "name": "Python for Data Analysis",
+      "description": "Python for Data Analysis: Data Wrangling with pandas, NumPy, and Jupyter, Third Edition (Grayscale Indian Edition)",
+      "price": "1800.00",
+      "stock": 37,
+      "image": "products/711FSQbaANL._SY342_.jpg",
+      "created_at": "2026-06-04T13:23:25.729Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 36,
+    "fields": {
+      "category": 3,
+      "name": "Learning SQL",
+      "description": "Learning SQL: Generate, Manipulate, and Retrieve Data, Third Edition (Greyscale Indian Edition)",
+      "price": "1475.00",
+      "stock": 27,
+      "image": "products/71rRviHwKML._SY342_.jpg",
+      "created_at": "2026-06-04T13:24:19.713Z"
+    }
+  },
+  {
+    "model": "store.cart",
+    "pk": 1,
+    "fields": {
+      "user": 2,
+      "created_at": "2026-06-02T14:05:03.647Z"
+    }
+  },
+  {
+    "model": "store.cart",
+    "pk": 3,
+    "fields": {
+      "user": 3,
+      "created_at": "2026-06-02T19:29:56.785Z"
+    }
+  },
+  {
+    "model": "store.order",
+    "pk": 1,
+    "fields": {
+      "user": 2,
+      "full_name": "Dhanya sree",
+      "email": "dhanyasree@gmail.com",
+      "address": "Hyderabad",
+      "city": "Hyderabad",
+      "state": "Telangana",
+      "zip_code": "500001",
+      "total_amount": "65000.00",
+      "status": "Pending",
+      "created_at": "2026-06-02T16:15:36.057Z"
+    }
+  },
+  {
+    "model": "store.order",
+    "pk": 2,
+    "fields": {
+      "user": 2,
+      "full_name": "dolly",
+      "email": "dhanyasree@gmail.com",
+      "address": "Hyderabad",
+      "city": "Hyderabad",
+      "state": "Telangana",
+      "zip_code": "500001",
+      "total_amount": "130000.00",
+      "status": "Pending",
+      "created_at": "2026-06-02T16:42:18.948Z"
+    }
+  },
+  {
+    "model": "store.order",
+    "pk": 3,
+    "fields": {
+      "user": 2,
+      "full_name": "dolly",
+      "email": "dolly@gmail.com",
+      "address": "Hyderabad",
+      "city": "Hyderabad",
+      "state": "Telangana",
+      "zip_code": "500001",
+      "total_amount": "130000.00",
+      "status": "Pending",
+      "created_at": "2026-06-02T16:54:54.980Z"
+    }
+  },
+  {
+    "model": "store.order",
+    "pk": 4,
+    "fields": {
+      "user": 3,
+      "full_name": "Dolly ",
+      "email": "",
+      "address": "",
+      "city": "",
+      "state": "",
+      "zip_code": "",
+      "total_amount": "65000.00",
+      "status": "Pending",
+      "created_at": "2026-06-02T19:53:08.262Z"
+    }
+  },
+  {
+    "model": "store.order",
+    "pk": 5,
+    "fields": {
+      "user": 3,
+      "full_name": "Dolly ",
+      "email": "dhanyasree@gmail.com",
+      "address": "Hyderabad",
+      "city": "Hyderabad",
+      "state": "Telangana",
+      "zip_code": "500001",
+      "total_amount": "0.00",
+      "status": "Pending",
+      "created_at": "2026-06-02T19:53:50.938Z"
+    }
+  },
+  {
+    "model": "store.order",
+    "pk": 6,
+    "fields": {
+      "user": 3,
+      "full_name": "Dolly ",
+      "email": "dhanyasree@gmail.com",
+      "address": "Hyderabad",
+      "city": "Hyderabad",
+      "state": "Telangana",
+      "zip_code": "50001",
+      "total_amount": "65000.00",
+      "status": "Pending",
+      "created_at": "2026-06-02T19:55:21.675Z"
+    }
+  },
+  {
+    "model": "store.order",
+    "pk": 7,
+    "fields": {
+      "user": 2,
+      "full_name": "dolly",
+      "email": "",
+      "address": "",
+      "city": "",
+      "state": "",
+      "zip_code": "",
+      "total_amount": "65000.00",
+      "status": "Pending",
+      "created_at": "2026-06-02T20:41:54.605Z"
+    }
+  },
+  {
+    "model": "store.order",
+    "pk": 8,
+    "fields": {
+      "user": 2,
+      "full_name": "dolly",
+      "email": "",
+      "address": "",
+      "city": "",
+      "state": "",
+      "zip_code": "",
+      "total_amount": "0.00",
+      "status": "Pending",
+      "created_at": "2026-06-02T20:42:28.266Z"
+    }
+  },
+  {
+    "model": "store.order",
+    "pk": 9,
+    "fields": {
+      "user": 2,
+      "full_name": "Dolly",
+      "email": "dhanyasree@gmail.com",
+      "address": "Hyderabad",
+      "city": "Hyderabad",
+      "state": "Telangana",
+      "zip_code": "500001",
+      "total_amount": "58500.00",
+      "status": "Pending",
+      "created_at": "2026-06-02T20:54:16.290Z"
+    }
+  },
+  {
+    "model": "store.order",
+    "pk": 10,
+    "fields": {
+      "user": 2,
+      "full_name": "Dolly",
+      "email": "dhanyasree@gmail.com",
+      "address": "Hyderabad",
+      "city": "Hyderabad",
+      "state": "Telangana",
+      "zip_code": "",
+      "total_amount": "0.00",
+      "status": "Pending",
+      "created_at": "2026-06-02T20:57:02.259Z"
+    }
+  },
+  {
+    "model": "store.order",
+    "pk": 11,
+    "fields": {
+      "user": 2,
+      "full_name": "DOLLY",
+      "email": "dhanyasree@gmail.com",
+      "address": "Hyderabad",
+      "city": "Hyderabad",
+      "state": "Telangana",
+      "zip_code": "500001",
+      "total_amount": "58500.00",
+      "status": "Pending",
+      "created_at": "2026-06-02T22:32:29.171Z"
+    }
+  },
+  {
+    "model": "store.order",
+    "pk": 12,
+    "fields": {
+      "user": 2,
+      "full_name": "",
+      "email": "",
+      "address": "",
+      "city": "",
+      "state": "",
+      "zip_code": "",
+      "total_amount": "65000.00",
+      "status": "Pending",
+      "created_at": "2026-06-02T22:33:31.883Z"
+    }
+  },
+  {
+    "model": "store.order",
+    "pk": 13,
+    "fields": {
+      "user": 2,
+      "full_name": "",
+      "email": "",
+      "address": "",
+      "city": "",
+      "state": "",
+      "zip_code": "",
+      "total_amount": "130000.00",
+      "status": "Pending",
+      "created_at": "2026-06-03T10:56:37.871Z"
+    }
+  },
+  {
+    "model": "store.order",
+    "pk": 14,
+    "fields": {
+      "user": 2,
+      "full_name": "",
+      "email": "",
+      "address": "",
+      "city": "",
+      "state": "",
+      "zip_code": "",
+      "total_amount": "65000.00",
+      "status": "Pending",
+      "created_at": "2026-06-03T17:03:12.464Z"
+    }
+  },
+  {
+    "model": "store.order",
+    "pk": 15,
+    "fields": {
+      "user": 2,
+      "full_name": "",
+      "email": "",
+      "address": "",
+      "city": "",
+      "state": "",
+      "zip_code": "",
+      "total_amount": "131800.00",
+      "status": "Pending",
+      "created_at": "2026-06-04T12:32:57.945Z"
+    }
+  },
+  {
+    "model": "store.order",
+    "pk": 16,
+    "fields": {
+      "user": 2,
+      "full_name": "",
+      "email": "",
+      "address": "",
+      "city": "",
+      "state": "",
+      "zip_code": "",
+      "total_amount": "66900.00",
+      "status": "Pending",
+      "created_at": "2026-06-05T14:05:09.346Z"
+    }
+  },
+  {
+    "model": "store.orderitem",
+    "pk": 1,
+    "fields": {
+      "order": 1,
+      "product": 1,
+      "quantity": 1,
+      "price": "65000.00"
+    }
+  },
+  {
+    "model": "store.orderitem",
+    "pk": 2,
+    "fields": {
+      "order": 2,
+      "product": 1,
+      "quantity": 2,
+      "price": "65000.00"
+    }
+  },
+  {
+    "model": "store.orderitem",
+    "pk": 3,
+    "fields": {
+      "order": 3,
+      "product": 1,
+      "quantity": 2,
+      "price": "65000.00"
+    }
+  },
+  {
+    "model": "store.orderitem",
+    "pk": 4,
+    "fields": {
+      "order": 4,
+      "product": 1,
+      "quantity": 1,
+      "price": "65000.00"
+    }
+  },
+  {
+    "model": "store.orderitem",
+    "pk": 5,
+    "fields": {
+      "order": 6,
+      "product": 1,
+      "quantity": 1,
+      "price": "65000.00"
+    }
+  },
+  {
+    "model": "store.orderitem",
+    "pk": 6,
+    "fields": {
+      "order": 7,
+      "product": 1,
+      "quantity": 1,
+      "price": "65000.00"
+    }
+  },
+  {
+    "model": "store.orderitem",
+    "pk": 7,
+    "fields": {
+      "order": 9,
+      "product": 1,
+      "quantity": 1,
+      "price": "65000.00"
+    }
+  },
+  {
+    "model": "store.orderitem",
+    "pk": 8,
+    "fields": {
+      "order": 11,
+      "product": 1,
+      "quantity": 1,
+      "price": "65000.00"
+    }
+  },
+  {
+    "model": "store.orderitem",
+    "pk": 9,
+    "fields": {
+      "order": 12,
+      "product": 1,
+      "quantity": 1,
+      "price": "65000.00"
+    }
+  },
+  {
+    "model": "store.orderitem",
+    "pk": 10,
+    "fields": {
+      "order": 13,
+      "product": 1,
+      "quantity": 2,
+      "price": "65000.00"
+    }
+  },
+  {
+    "model": "store.orderitem",
+    "pk": 11,
+    "fields": {
+      "order": 14,
+      "product": 1,
+      "quantity": 1,
+      "price": "65000.00"
+    }
+  },
+  {
+    "model": "store.orderitem",
+    "pk": 12,
+    "fields": {
+      "order": 15,
+      "product": 1,
+      "quantity": 1,
+      "price": "66900.00"
+    }
+  },
+  {
+    "model": "store.orderitem",
+    "pk": 13,
+    "fields": {
+      "order": 15,
+      "product": 3,
+      "quantity": 1,
+      "price": "64900.00"
+    }
+  },
+  {
+    "model": "store.orderitem",
+    "pk": 14,
+    "fields": {
+      "order": 16,
+      "product": 1,
+      "quantity": 1,
+      "price": "66900.00"
+    }
+  },
+  {
+    "model": "store.review",
+    "pk": 1,
+    "fields": {
+      "product": 1,
+      "user": 2,
+      "rating": 4,
+      "comment": "    ",
+      "created_at": "2026-06-02T18:01:21.917Z"
+    }
+  },
+  {
+    "model": "store.review",
+    "pk": 2,
+    "fields": {
+      "product": 1,
+      "user": 2,
+      "rating": 5,
+      "comment": "    ",
+      "created_at": "2026-06-02T18:01:25.989Z"
+    }
+  },
+  {
+    "model": "store.wishlist",
+    "pk": 2,
+    "fields": {
+      "user": 3,
+      "product": 1,
+      "created_at": "2026-06-02T18:57:33.678Z"
+    }
+  },
+  {
+    "model": "store.wishlist",
+    "pk": 3,
+    "fields": {
+      "user": 2,
+      "product": 3,
+      "created_at": "2026-06-04T13:18:13.354Z"
+    }
+  },
+  {
+    "model": "store.coupon",
+    "pk": 1,
+    "fields": {
+      "code": "SAVE10",
+      "discount_percent": 10,
+      "active": true
+    }
+  }
+]

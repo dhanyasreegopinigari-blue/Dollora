@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block title %}Wishlist{% endblock %}
+
+{% block content %}
+
+<h2 class="mb-4">❤️ My Wishlist</h2>
+
+{% if items %}
+
+<div class="row">
+
+    {% for item in items %}
+
+    <div class="col-md-4 mb-4">
+
+        <div class="card shadow-sm">
+
+            <div class="card-body">
+
+                <h5 class="card-title">
+                    {{ item.product.name }}
+                </h5>
+
+                <p class="price">
+                    ₹{{ item.product.price }}
+                </p>
+
+                <p class="text-muted">
+                    {{ item.product.description|truncatewords:10 }}
+                </p>
+
+                <a href="/product/{{ item.product.id }}/"
+                   class="btn btn-primary btn-sm">
+                   View Product
+                </a>
+
+                <a href="/add-to-cart/{{ item.product.id }}/"
+                   class="btn btn-success btn-sm">
+                   Move to Cart
+                </a>
+
+                <a href="/remove-from-wishlist/{{ item.id }}/"
+                    class="btn btn-outline-danger btn-sm">
+                    Remove
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+{% else %}
+
+<p>No items in wishlist yet ❤️</p>
+
+{% endif %}
+
+{% endblock %}

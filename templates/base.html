@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Dollora{% endblock %}</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        :root{
+            --topbar-bg: #131921;
+            --secondary-bg: #2874f0;
+            --page-bg: #f5f7fb;
+            --card-radius: 24px;
+        }
+
+        body{
+            background: var(--page-bg);
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .site-header{
+            position: sticky;
+            top: 0;
+            z-index: 1030;
+        }
+
+        .top-navbar{
+            background: var(--topbar-bg);
+            padding: 0.9rem 1rem;
+        }
+
+        .top-navbar .navbar-brand{
+            color: #fff;
+            font-size: 1.75rem;
+            font-weight: 800;
+            letter-spacing: 0.3px;
+        }
+
+        .top-navbar .navbar-brand:hover{
+            color: #fff;
+        }
+
+        .search-wrapper{
+            max-width: 620px;
+            width: 100%;
+        }
+
+        .search-input{
+            border-radius: 999px 0 0 999px;
+            border: 0;
+            padding-left: 1rem;
+            min-height: 44px;
+        }
+
+        .search-btn{
+            border-radius: 0 999px 999px 0;
+            min-height: 44px;
+            padding-inline: 1rem;
+            font-weight: 700;
+        }
+
+        .compare-btn{
+            border-radius: 999px;
+            font-weight: 700;
+            white-space: nowrap;
+            min-height: 44px;
+            padding-inline: 1rem;
+        }
+
+        .secondary-navbar{
+            background: var(--secondary-bg);
+            padding: 0.6rem 1rem;
+        }
+
+        .secondary-navbar .navbar-nav{
+            gap: 0.45rem;
+        }
+
+        .secondary-navbar .nav-link{
+            color: #fff !important;
+            font-weight: 600;
+            border-radius: 999px;
+            padding: 0.55rem 0.95rem;
+            transition: 0.25s ease;
+        }
+
+        .secondary-navbar .nav-link:hover{
+            background: rgba(255,255,255,0.16);
+            color: #fff !important;
+            transform: translateY(-1px);
+        }
+
+        .sidebar-toggle{
+            border-radius: 999px;
+            font-weight: 700;
+            min-height: 42px;
+            padding-inline: 1rem;
+        }
+
+        .offcanvas-header{
+            background: var(--topbar-bg);
+            color: #fff;
+        }
+
+        .offcanvas-header .btn-close{
+            filter: invert(1) grayscale(100%);
+        }
+
+        .sidebar-section-title{
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: #6b7280;
+            margin: 0.25rem 0 0.75rem;
+            font-weight: 800;
+        }
+
+        .category-pill{
+            display: block;
+            text-decoration: none;
+            color: #1f2937;
+            background: #f8fafc;
+            border: 1px solid #e5e7eb;
+            padding: 0.8rem 1rem;
+            border-radius: 14px;
+            font-weight: 600;
+            transition: 0.2s ease;
+        }
+
+        .category-pill:hover{
+            background: #eaf2ff;
+            border-color: #cfe0ff;
+            color: #0d6efd;
+            transform: translateX(3px);
+        }
+
+        .main-content{
+            padding-top: 1.25rem;
+            padding-bottom: 2rem;
+        }
+
+        .card{
+            border: none;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            transition: 0.25s ease;
+        }
+
+        .card:hover{
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+        }
+
+        .product-card{
+            border-radius: var(--card-radius);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: #fff;
+            position: relative;
+        }
+
+        .product-card:hover{
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .product-img {
+            width: 100%;
+            height: 300px;
+            object-fit: contain;
+            background: #ffffff;
+            padding: 12px;
+        }
+
+        .product-badge{
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            z-index: 2;
+            border-radius: 999px;
+            padding: 0.5rem 0.8rem;
+            font-weight: 800;
+            letter-spacing: 0.02em;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+        }
+
+        .price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #198754;
+        }
+
+        .card-title{
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-top: 10px;
+        }
+
+        .btn{
+            border-radius: 12px;
+            font-weight: 600;
+        }
+
+        .hero-section{
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 60px;
+            border-radius: 25px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .badge{
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse{
+            0%{ transform: scale(1); }
+            50%{ transform: scale(1.08); }
+            100%{ transform: scale(1); }
+        }
+
+        footer{
+            margin-top: 80px;
+            padding: 30px;
+            text-align: center;
+            background: linear-gradient(135deg, #131921, #2874f0);
+            color: white;
+        }
+
+        .cart-btn{
+            background: white;
+            color: #2575fc;
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 50px;
+            font-weight: 700;
+            position: relative;
+            transition: 0.3s;
+        }
+
+        .cart-btn:hover{
+            transform: translateY(-3px);
+            color: #2575fc;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .cart-badge{
+            background: #dc3545;
+            color: white;
+            border-radius: 50%;
+            padding: 4px 8px;
+            font-size: 12px;
+            margin-left: 5px;
+            position: absolute;
+            top: -5px;
+            right: -10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="site-header shadow-sm">
+    <nav class="navbar top-navbar navbar-dark">
+        <div class="container-fluid gap-3 align-items-center">
+            <a href="{% url 'home' %}" class="navbar-brand mb-0">Dollora</a>
+
+            <form action="{% url 'home' %}" method="get" class="search-wrapper d-flex mx-auto">
+                <input
+                    type="search"
+                    name="q"
+                    value="{{ query|default:'' }}"
+                    class="form-control search-input"
+                    placeholder="Search products by name">
+                <button type="submit" class="btn btn-warning search-btn">Search</button>
+            </form>
+
+            <a href="{% url 'compare_products' %}" class="btn btn-outline-light compare-btn">
+                Compare
+            </a>
+        </div>
+    </nav>
+
+    <nav class="navbar secondary-navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <div class="d-flex align-items-center gap-2 me-3">
+                <button
+                    class="btn btn-light sidebar-toggle"
+                    type="button"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#categorySidebar"
+                    aria-controls="categorySidebar">
+                    ☰ Categories
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse show">
+                <ul class="navbar-nav me-auto flex-row flex-wrap align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'wishlist' %}">Wishlist</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'profile' %}">My Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'orders' %}">My Orders</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link position-relative" href="{% url 'cart' %}">
+                            Cart
+                            <span class="badge text-bg-danger ms-1">{{ cart_count|default:0 }}</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'dashboard' %}">Dashboard</a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav ms-auto flex-row align-items-center gap-2">
+                    {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a href="/accounts/logout/" class="btn btn-outline-light btn-sm">Logout</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a href="/accounts/login/" class="btn btn-outline-light btn-sm">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/accounts/register/" class="btn btn-light btn-sm">Register</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="categorySidebar" aria-labelledby="categorySidebarLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="categorySidebarLabel">Shop by Category</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div class="d-grid gap-4">
+            {% for section in sidebar_menu %}
+                <div>
+                    <div class="sidebar-section-title">{{ section.title }}</div>
+                    <div class="d-grid gap-2">
+                        {% for link in section.links %}
+                            {% if link.category %}
+                                <a href="{% url 'category_products' link.category.id %}" class="category-pill">
+                                    {{ link.label }}
+                                </a>
+                            {% else %}
+                                <a href="{% url 'home' %}" class="category-pill">
+                                    {{ link.label }}
+                                </a>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% if messages %}
+<div class="container mt-3">
+    {% for message in messages %}
+        <div class="alert alert-success mb-2">
+            {{ message }}
+        </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+<div class="container main-content">
+    {% block content %}{% endblock %}
+</div>
+
+<footer>
+    <div class="container text-center">
+        <h5>Dollora</h5>
+        <p class="mb-1">Premium Ecommerce Platform built with Django</p>
+        <small>© 2026 All Rights Reserved</small>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

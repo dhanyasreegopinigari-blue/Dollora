@@ -1,0 +1,192 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 class="mb-4">Admin Dashboard</h1>
+
+<div class="row">
+
+    <div class="col-md-3">
+        <div class="card p-3 shadow">
+            <h4>Total Products</h4>
+            <h2>{{ total_products }}</h2>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card p-3 shadow">
+            <h4>Total Orders</h4>
+            <h2>{{ total_orders }}</h2>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card p-3 shadow">
+            <h4>Total Users</h4>
+            <h2>{{ total_users }}</h2>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card p-3 shadow">
+            <h4>Total Revenue</h4>
+            <h2>₹{{ revenue }}</h2>
+        </div>
+    </div>
+
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-12">
+        <h4>Recent Orders</h4>
+        <hr class="my-5">
+
+        <h3>Top Selling Products</h3>
+
+        <table class="table table-bordered">
+
+            <thead>
+                <tr>
+                <th>Product</th>
+                <th>Units Sold</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+            {% for product in top_products %}
+
+                <tr>
+
+                    <td>
+                        {{ product.product__name }}
+                    </td>
+
+                    <td>
+                        {{ product.sold }}
+                    </td>
+
+                </tr>
+
+            {% empty %}
+
+                <tr>
+                    <td colspan="2">
+                        No sales yet
+                    </td>
+                </tr>
+
+            {% endfor %}
+
+            </tbody>
+
+        </table>
+
+        <hr class="my-5">
+
+        <h3>Monthly Revenue</h3>
+
+        <table class="table table-striped">
+
+            <thead>
+                <tr>
+                    <th>Month</th>
+                    <th>Revenue</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+            {% for sale in monthly_sales %}
+
+                <tr>
+                    <td>
+                        {{ sale.month|date:"F Y" }}
+                    </td>
+
+                    <td>
+                        ₹{{ sale.total }}
+                    </td>
+                </tr>
+
+            {% empty %}
+
+                <tr>
+                    <td colspan="2">
+                        No revenue data available
+                    </td>
+                </tr>
+
+            {% endfor %}
+
+            </tbody>
+
+        </table>
+
+        <hr class="my-5">
+
+        <h3>Low Stock Products</h3>
+
+        <table class="table table-bordered">
+
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Stock Left</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+            {% for product in low_stock_products %}
+
+                <tr>
+
+                    <td>{{ product.name }}</td>
+
+                    <td>
+                        <span class="badge bg-danger">
+                            {{ product.stock }}
+                        </span>
+                    </td>
+
+                </tr>
+
+            {% empty %}
+
+                <tr>
+                    <td colspan="2">
+                        No low stock products
+                    </td>
+                    </tr>
+
+            {% endfor %}
+
+            </tbody>
+
+        </table>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>User</th>
+                    <th>Total Amount</th>
+                    <th>Created At</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for order in recent_orders %}
+                <tr>
+                    <td>{{ order.id }}</td>
+                    <td>{{ order.user.username }}</td>
+                    <td>₹{{ order.total_amount }}</td>
+                    <td>{{ order.created_at }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

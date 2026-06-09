@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" role="img" aria-label="Product image placeholder">
+  <rect width="800" height="600" fill="#f3f4f6"/>
+  <rect x="120" y="80" width="560" height="440" rx="32" fill="#ffffff" stroke="#d1d5db"/>
+  <circle cx="400" cy="250" r="72" fill="#dbeafe"/>
+  <path d="M280 420h240c22 0 40-18 40-40V330c0-22-18-40-40-40H280c-22 0-40 18-40 40v50c0 22 18 40 40 40z" fill="#bfdbfe"/>
+  <text x="400" y="510" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" fill="#6b7280">No Image Available</text>
+</svg>

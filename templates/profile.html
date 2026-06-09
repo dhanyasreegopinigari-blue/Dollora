@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}
+My Profile
+{% endblock %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <div class="card shadow p-4">
+
+        <h2>My Profile</h2>
+
+        <hr>
+
+        <p>
+            <strong>Username:</strong>
+            {{ user.username }}
+        </p>
+
+        <p>
+            <strong>Email:</strong>
+            {{ user.email }}
+        </p>
+
+        <hr>
+
+        <h4>Statistics</h4>
+
+        <p>
+            Total Orders:
+            {{ order_count }}
+        </p>
+
+        <p>
+            Wishlist Items:
+            {{ wishlist_count }}
+        </p>
+
+        <p>
+            Cart Items:
+            {{ cart_count }}
+        </p>
+
+    </div>
+
+</div>
+
+{% endblock %}

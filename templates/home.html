@@ -1,0 +1,171 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home - Dollora{% endblock %}
+
+{% block content %}
+
+<div class="hero-section text-center">
+    <h1 class="display-4 fw-bold">Shop Smart. Shop Better.</h1>
+    <p class="lead mb-0">Discover premium products at unbeatable prices.</p>
+    <a href="#products" class="btn btn-warning btn-lg mt-3">Start Shopping</a>
+</div>
+
+<div class="card p-3 mb-4">
+    <form method="GET">
+        <input type="hidden" name="q" value="{{ query }}">
+        <input type="hidden" name="sort" value="{{ sort }}">
+
+        <div class="row g-3">
+            <div class="col-md-4">
+                <label class="form-label">Price Range</label>
+                <select name="price" class="form-select">
+                    <option value="">All Prices</option>
+                    <option value="1" {% if price == '1' %}selected{% endif %}>Below ₹500</option>
+                    <option value="2" {% if price == '2' %}selected{% endif %}>₹500 - ₹1000</option>
+                    <option value="3" {% if price == '3' %}selected{% endif %}>Above ₹1000</option>
+                </select>
+            </div>
+
+            <div class="col-md-4">
+                <label class="form-label">Stock</label>
+                <select name="stock" class="form-select">
+                    <option value="">All Products</option>
+                    <option value="1" {% if stock == '1' %}selected{% endif %}>In Stock Only</option>
+                </select>
+            </div>
+
+            <div class="col-md-4 d-flex align-items-end">
+                <button class="btn btn-primary w-100">Apply Filters</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="d-flex align-items-center justify-content-between mb-3">
+    <h3 class="mb-0">Products</h3>
+    {% if query %}
+        <span class="text-muted">Showing results for “{{ query }}”</span>
+    {% endif %}
+</div>
+
+<div id="products" class="row">
+    {% if recent_products %}
+        <div class="col-12">
+            <h3 class="mb-4">Recently Viewed</h3>
+        </div>
+
+        {% for product in recent_products %}
+            <div class="col-md-4 mb-4">
+                <div class="card product-card h-100">
+                    {% if product.effective_discount_percent %}
+                        <span class="badge bg-danger product-badge">
+                            {{ product.effective_discount_percent }}% OFF
+                        </span>
+                    {% endif %}
+
+                    {% if product.image %}
+                        <a href="{% url 'product_detail' product.id %}">
+                            <img src="{{ product.image.url }}" class="card-img-top product-img" alt="{{ product.name }}">
+                        </a>
+                    {% else %}
+                        <img src="{% static 'images/placeholder-product.svg' %}" class="card-img-top product-img" alt="{{ product.name }}">
+                    {% endif %}
+
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">{{ product.name }}</h5>
+                        <p class="card-text text-muted">{{ product.description|truncatewords:20 }}</p>
+                        <p class="price">₹{{ product.price }}</p>
+                        <p class="mb-1">⭐ Reviews: {{ product.review_set.all|length }}</p>
+                        <p class="mb-3">Stock: {{ product.stock }}</p>
+
+                        <div class="mt-auto d-grid gap-2">
+                            <a href="{% url 'product_detail' product.id %}" class="btn btn-primary">View Details</a>
+                            {% if product.stock > 0 %}
+                                <a href="{% url 'add_to_cart' product.id %}" class="btn btn-success">Add to Cart</a>
+                                <a href="{% url 'add_to_wishlist' product.id %}" class="btn btn-outline-danger btn-sm">❤️ Wishlist</a>
+                            {% else %}
+                                <button class="btn btn-danger" disabled>Out of Stock</button>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    {% for product in products %}
+        <div class="col-md-4 mb-4">
+            <div class="card product-card h-100">
+                {% if product.effective_discount_percent %}
+                        <span class="badge bg-danger product-badge">
+                            {{ product.effective_discount_percent }}% OFF
+                        </span>
+                    {% endif %}
+
+                {% if product.image %}
+                        <a href="{% url 'product_detail' product.id %}">
+                            <img src="{{ product.image.url }}" class="card-img-top product-img" alt="{{ product.name }}">
+                        </a>
+                    {% else %}
+                        <img src="{% static 'images/placeholder-product.svg' %}" class="card-img-top product-img" alt="{{ product.name }}">
+                    {% endif %}
+
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    <p class="card-text text-muted">{{ product.description|truncatewords:20 }}</p>
+                    <p class="price">₹{{ product.price }}</p>
+                    <p class="mb-1">⭐ Reviews: {{ product.review_set.all|length }}</p>
+                    <p class="mb-3">Stock: {{ product.stock }}</p>
+
+                    <div class="mt-auto d-grid gap-2">
+                        <a href="{% url 'product_detail' product.id %}" class="btn btn-primary">View Details</a>
+                        {% if product.stock > 0 %}
+                            <a href="{% url 'add_to_cart' product.id %}" class="btn btn-success">Add to Cart</a>
+                            <a href="{% url 'add_to_wishlist' product.id %}" class="btn btn-outline-danger btn-sm">❤️ Wishlist</a>
+                        {% else %}
+                            <button class="btn btn-danger" disabled>Out of Stock</button>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% empty %}
+        <div class="col-12 text-center py-5">
+            <h3>No products found 🛒</h3>
+            <p class="text-muted mb-0">Try a different search term or clear the filters.</p>
+        </div>
+    {% endfor %}
+</div>
+
+{% if products.paginator.num_pages > 1 %}
+<nav aria-label="Product pagination" class="mt-4">
+    <ul class="pagination justify-content-center flex-wrap gap-1">
+        <li class="page-item {% if not products.has_previous %}disabled{% endif %}">
+            <a class="page-link" href="{% if products.has_previous %}?page={{ products.previous_page_number }}&q={{ query|urlencode }}&price={{ price }}&stock={{ stock }}&sort={{ sort }}{% else %}#{% endif %}">Previous</a>
+        </li>
+
+        {% for num in page_range %}
+            {% if num == products.paginator.ELLIPSIS %}
+                <li class="page-item disabled">
+                    <span class="page-link">{{ num }}</span>
+                </li>
+            {% elif num == products.number %}
+                <li class="page-item active" aria-current="page">
+                    <span class="page-link">{{ num }}</span>
+                </li>
+            {% else %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ num }}&q={{ query|urlencode }}&price={{ price }}&stock={{ stock }}&sort={{ sort }}">{{ num }}</a>
+                </li>
+            {% endif %}
+        {% endfor %}
+
+        <li class="page-item {% if not products.has_next %}disabled{% endif %}">
+            <a class="page-link" href="{% if products.has_next %}?page={{ products.next_page_number }}&q={{ query|urlencode }}&price={{ price }}&stock={{ stock }}&sort={{ sort }}{% else %}#{% endif %}">Next</a>
+        </li>
+    </ul>
+</nav>
+{% endif %}
+
+{% endblock %}

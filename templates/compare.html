@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 class="mb-4">
+    Compare Products
+</h1>
+
+<form method="GET">
+
+    <div class="row">
+
+        <div class="col-md-5">
+
+            <select
+                name="p1"
+                class="form-select">
+
+                {% for product in products %}
+                <option value="{{ product.id }}">
+                    {{ product.name }}
+                </option>
+                {% endfor %}
+
+            </select>
+
+        </div>
+
+        <div class="col-md-5">
+
+            <select
+                name="p2"
+                class="form-select">
+
+                {% for product in products %}
+                <option value="{{ product.id }}">
+                    {{ product.name }}
+                </option>
+                {% endfor %}
+
+            </select>
+
+        </div>
+
+        <div class="col-md-2">
+
+            <button
+                class="btn btn-primary w-100">
+
+                Compare
+
+            </button>
+
+        </div>
+
+    </div>
+
+</form>
+
+{% if product1 and product2 %}
+
+<hr>
+
+<table class="table table-bordered mt-4">
+
+    <tr>
+        <th>Feature</th>
+        <th>{{ product1.name }}</th>
+        <th>{{ product2.name }}</th>
+    </tr>
+
+    <tr>
+        <td>Price</td>
+        <td>₹{{ product1.price }}</td>
+        <td>₹{{ product2.price }}</td>
+    </tr>
+
+    <tr>
+        <td>Stock</td>
+        <td>{{ product1.stock }}</td>
+        <td>{{ product2.stock }}</td>
+    </tr>
+
+    <tr>
+        <td>Category</td>
+        <td>{{ product1.category.name }}</td>
+        <td>{{ product2.category.name }}</td>
+    </tr>
+
+    <tr>
+        <td>Description</td>
+        <td>{{ product1.description }}</td>
+        <td>{{ product2.description }}</td>
+    </tr>
+
+</table>
+
+{% endif %}
+
+{% endblock %}

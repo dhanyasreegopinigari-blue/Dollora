@@ -1,0 +1,221 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+{{ product.name }}
+{% endblock %}
+
+{% block content %}
+
+<div class="card p-4 shadow-lg border-0">
+    <div class="row">
+
+        <div class="col-md-6">
+
+            {% if product.image %}
+            <img src="{{ product.image.url }}"
+                class="img-fluid rounded shadow w-100"
+                style="max-height:500px; object-fit:cover;">
+            {% else %}
+            <img src="{% static 'images/placeholder-product.svg' %}" class="img-fluid rounded shadow w-100" style="max-height:500px; object-fit:cover;">
+            {% endif %}
+
+            <div class="row mt-3">
+
+                {% for img in images %}
+
+                <div class="col-3">
+                    <img src="{{ img.image.url }}"
+                        class="img-fluid rounded">
+                </div>
+
+            {% endfor %}
+
+            </div>
+
+        </div>    
+
+        <div class="col-md-6">
+
+                <h1>{{ product.name }}</h1>
+
+                {% if avg_rating %}
+                <p>
+                    ⭐ Average Rating: {{ avg_rating|floatformat:1 }} / 5
+                </p>
+                {% else %}
+                <p>No ratings yet</p>
+                {% endif %}
+
+                <h2 class="text-success">
+                    ₹{{ product.price }}
+                </h2>
+
+                <p class="mt-4">
+                    {{ product.description }}
+                </p>
+
+                <p>
+                    Stock Available: {{ product.stock }}
+                </p>
+
+                <p class="mt-2">Stock: {{ product.stock }}</p>
+
+                {% if product.stock > 0 and product.stock <= 5 %}
+                <div class="alert alert-warning">
+                    ⚠ Only {{ product.stock }} left in stock!
+                </div>
+                {% endif %}
+
+                {% if product.effective_discount_percent %}
+                <span class="badge bg-danger">
+                    {{ product.effective_discount_percent }}% OFF
+                </span>
+                {% endif %}
+
+                {% if product.stock == 0 %}
+
+                <span class="badge bg-danger">
+                    Out of Stock
+                </span>
+
+                {% else %}
+
+                <a
+                href="/add-to-cart/{{ product.id }}/"
+                    class="btn btn-success btn-lg">
+                        Add to Cart
+                </a>
+
+                <a href="/add-to-wishlist/{{ product.id }}/"
+                   class="btn btn-outline-danger">
+                   ❤️ Add to Wishlist
+                </a>
+
+                {% endif %}
+
+                <a href="/"
+                   class="btn btn-outline-secondary btn-lg">
+                    Back
+                </a>
+
+            </div>
+
+    </div>
+</div>
+
+<hr>
+
+{% if user.is_authenticated %}
+
+<h3>Write a Review</h3>
+
+<form method="POST">
+    {% csrf_token %}
+
+    <label>Rating</label>
+
+    <select
+        name="rating"
+        class="form-control mb-3">
+
+        <option value="5">5 Stars</option>
+        <option value="4">4 Stars</option>
+        <option value="3">3 Stars</option>
+        <option value="2">2 Stars</option>
+        <option value="1">1 Star</option>
+
+    </select>
+
+    <textarea
+        name="comment"
+        class="form-control mb-3"
+        placeholder="Write your review">
+    </textarea>
+
+    <button
+        class="btn btn-success">
+
+        Submit Review
+
+    </button>
+
+</form>
+
+{% else %}
+
+<p>
+    Please <a href="/accounts/login/">login</a>
+    to write a review.
+</p>
+
+{% endif %}
+
+<hr>
+
+<h3>Customer Reviews</h3>
+
+{% for review in reviews %}
+
+<div class="border p-3 mb-2 rounded">
+
+    <strong>{{ review.user.username }}</strong>
+    <span>⭐ {{ review.rating }}/5</span>
+
+    <br>
+
+    <small class="text-muted">
+        {{ review.created_at|date:"d M Y" }}
+    </small>
+
+    <p>{{ review.comment }}</p>
+
+</div>
+
+{% empty %}
+
+<p>No reviews yet.</p>
+
+{% endfor %}
+
+<hr>
+
+<h3>You May Also Like</h3>
+
+<div class="row">
+{% for item in related_products %}
+    <div class="col-md-3 mb-3">
+        <div class="card product-card h-100">
+            {% if item.effective_discount_percent %}
+                <span class="badge bg-danger product-badge">
+                    {{ item.effective_discount_percent }}% OFF
+                </span>
+            {% endif %}
+
+            {% if item.image %}
+                <a href="/product/{{ item.id }}/">
+                    <img src="{{ item.image.url }}" class="card-img-top product-img" alt="{{ item.name }}">
+                </a>
+            {% else %}
+                <img src="{% static 'images/placeholder-product.svg' %}" class="card-img-top product-img" alt="{{ item.name }}">
+            {% endif %}
+
+            <div class="card-body d-flex flex-column">
+                <h6 class="card-title">{{ item.name }}</h6>
+                <p class="price">₹{{ item.price }}</p>
+                <a href="/product/{{ item.id }}/" class="btn btn-primary btn-sm">View Details</a>
+                {% if item.stock > 0 %}
+                    <a href="/add-to-cart/{{ item.id }}/" class="btn btn-success btn-sm mt-2">Add to Cart</a>
+                    <a href="/add-to-wishlist/{{ item.id }}/" class="btn btn-outline-danger btn-sm mt-2">❤️ Wishlist</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% empty %}
+    <p>No related products.</p>
+{% endfor %}
+</div>
+
+</div>
+</div>
+{% endblock %}

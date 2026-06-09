@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Checkout</h2>
+
+<h4>Total: ₹{{ total }}</h4>
+<h4>Discount: ₹{{ discount }}</h4>
+
+<h4>Total: ₹{{ total }}</h4>
+<h4 class="text-success">Final Total After Discount: ₹{{ final_total }}</h4>
+
+<form method="POST">
+
+{% csrf_token %}
+
+<input
+name="full_name"
+class="form-control mb-2"
+placeholder="Full Name">
+
+<input
+name="email"
+class="form-control mb-2"
+placeholder="Email">
+
+<textarea
+name="address"
+class="form-control mb-2"
+placeholder="Address"></textarea>
+
+<input
+name="city"
+class="form-control mb-2"
+placeholder="City">
+
+<input
+name="state"
+class="form-control mb-2"
+placeholder="State">
+
+<input
+name="zip_code"
+class="form-control mb-2"
+placeholder="ZIP Code">
+
+<div class="mb-3">
+    <label>Coupon Code</label>
+    <input type="text" name="coupon" class="form-control" placeholder="Enter coupon code">
+</div>       
+
+<button class="btn btn-success">
+
+Place Order
+
+</button>
+
+</form>
+
+{% endblock %}

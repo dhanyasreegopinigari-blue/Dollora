@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <div class="card shadow p-3">
+
+        <h1 class="mb-4">Shopping Cart</h1>
+
+        {% if items %}
+
+            {% for item in items %}
+
+            <div class="d-flex justify-content-between align-items-center border-bottom py-2">
+
+                <div>
+                    <h5>{{ item.product.name }}</h5>
+
+                    <a href="/decrease/{{ item.id }}/"
+                       class="btn btn-sm btn-outline-secondary">-</a>
+
+                    <span class="mx-2">
+                        {{ item.quantity }}
+                    </span>
+
+                    <a href="/increase/{{ item.id }}/"
+                       class="btn btn-sm btn-outline-secondary">+</a>
+
+                    <a href="/remove/{{ item.id }}/"
+                       class="btn btn-sm btn-danger ms-2">
+                        Remove
+                    </a>
+                </div>
+
+                <div>
+                    ₹{{ item.total_price }}
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+            <hr>
+
+            <h4 class="text-end">
+                Grand Total: ₹{{ total }}
+            </h4>
+
+            <a href="/checkout/"
+               class="btn btn-success float-end">
+                Proceed to Checkout
+            </a>
+
+        {% else %}
+
+            <div class="text-center py-5">
+                <h3>Your cart is empty 🛒</h3>
+                <a href="/" class="btn btn-primary mt-3">Continue Shopping</a>
+            </div>
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+{% endblock %}
