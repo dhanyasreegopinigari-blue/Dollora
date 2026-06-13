@@ -27,7 +27,7 @@ Dollora is a full-stack e-commerce web application built with Django and Postgre
 ![Wishlist](screenshots/wishlist.png)
 
 ### Admin Dashboard
-![Admin Dashboard](screenshots/admin-dashboard.png)
+![Admin Dashboard](screenshots/admin.png)
 
 ---
 
